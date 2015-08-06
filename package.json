@@ -1,0 +1,51 @@
+{
+  "name": "the-wall",
+  "version": "0.0.0",
+  "description": "A collaborative media wall that serves shared channels constructed from tweets/e-mail/...",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhellemons/the-wall.git"
+  },
+  "author": "Laurens Hellemons <lhellemons@gmail.com>",
+  "dependencies": {
+    "express": "~4.9",
+    "express-handlebars": "~1.1",
+    "mongoose": "~3.8",
+    "node-jsx": "*",
+    "ntwitter": "~0.5",
+    "socket.io": "*"
+  },
+  "scripts": {
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browseriy": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify",
+    "start": "npm run watch & nodemon server.js"
+  },
+  "directories": {
+    // "test": "test"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.20",
+    "browserify": "~6.0",
+    "nodemon": "^1.2.1",
+    "reactify": "~0.14",
+    "uglify-js": "~2.4",
+    "watchify": "~2.0"
+  },
+  "keywords": [
+    "media",
+    "sharing",
+    "collaboration.playlist"
+  ],
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/lhellemons/the-wall/issues"
+  },
+  "homepage": "https://github.com/lhellemons/the-wall",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
