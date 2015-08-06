@@ -6,10 +6,13 @@ var ItemSchema = new Mongoose.Schema({
     title: String,
     content: String,
     parsed_at: Date
-});u
+});
 
 // the Item model
 var Item = Mongoose.model('Item', ItemSchema);
+
+// expose the underlying schema through a public property
+Item.Schema = ItemSchema;
 
 // export the model
 module.exports = Item;

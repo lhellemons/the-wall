@@ -8,5 +8,8 @@ var ChannelSchema = new Mongoose.Schema({
 // the model
 var Channel = Mongoose.model('Channel', ChannelSchema );
 
+// expose the underlying schema through a public property
+Channel.Schema = ChannelSchema;
+
 // export the model
 module.exports = Channel;
